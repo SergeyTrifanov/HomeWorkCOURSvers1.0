@@ -1,16 +1,17 @@
 package ru.skypro;
 
+import java.util.Arrays;
+
 public class Main {
     private static Employee[] employee = new Employee[2];
-    public static int salary() {
+    private static int salary() {
         int sum = 0;
         for (int i = 0; i < employee.length; i++) {
             sum = sum + employee[i].getSalary();
-            System.out.println("employee = " + employee[i]);
         }
         return sum;
     }
-public static Employee minSalary(){
+private static Employee minSalary(){
     Employee employeeWithMinSalary = employee[0];
     for (int j = 0; j < employee.length; j++){
         if (employee[j].getSalary() < employeeWithMinSalary.getSalary())
@@ -19,7 +20,7 @@ public static Employee minSalary(){
     return employeeWithMinSalary;
 
 }
-public static Employee maxSalary(){
+private static Employee maxSalary(){
     Employee employeeWithMaxSalary = employee[0];
     for (int j = 0; j < employee.length; j++){
         if (employee[j].getSalary() > employeeWithMaxSalary.getSalary())
@@ -27,7 +28,7 @@ public static Employee maxSalary(){
     }
     return employeeWithMaxSalary;
 }
-public static double averageSalary(){
+private static double averageSalary(){
     double average = 0;
     if (employee.length>0) {
         double sum1 = 0;
@@ -38,11 +39,12 @@ public static double averageSalary(){
     }
     return average;
 }
-public static void list(){
+private static void list(){
     for (int h = 0; h < employee.length; h++) {
         System.out.println(employee[h].getFirstName()+ " " +employee[h].getMiddleName()+ " " +employee[h].getLastName());
     }
 }
+
     public static void main(String[] args) {
         employee[0] = new Employee("Ivan", "Ivanovich", "Ivanov", 1,
                 100_000);
@@ -54,6 +56,7 @@ public static void list(){
         System.out.println("сотрудник с макс зп " + maxSalary());
         System.out.println("средняя зп на предприятии " + averageSalary());
         list();
+        System.out.println(Arrays.toString(employee));
     }
     }
 
