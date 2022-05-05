@@ -30,7 +30,7 @@ private static Employee maxSalary(){
 }
 private static double averageSalary(){
     double average = 0;
-    if (employee.length>0) {
+    if (employee.length>0){
         double sum1 = salary();
         average = sum1 / employee.length;
     }
