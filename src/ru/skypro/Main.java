@@ -31,10 +31,7 @@ private static Employee maxSalary(){
 private static double averageSalary(){
     double average = 0;
     if (employee.length>0) {
-        double sum1 = 0;
-        for (int o = 0; o <employee.length; o++){
-            sum1 += employee[o].getSalary();
-        }
+        double sum1 = salary();
         average = sum1 / employee.length;
     }
     return average;
